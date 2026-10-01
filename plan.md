@@ -1,36 +1,23 @@
-# Mantenimiento de Quintas — plan de implementación
+# Mantenimiento de Quintas — entrega autónoma
 
 ## Alcance
 
-Sitio institucional de una sola página para un emprendimiento familiar dedicado al mantenimiento de quintas. El objetivo es generar confianza y consultas directas por WhatsApp, sin presentar las quintas como propiedades en venta o alquiler y sin inventar una presencia en Instagram.
+Sitio institucional de una sola página para un emprendimiento familiar dedicado al mantenimiento de quintas. La entrega principal funciona desde un único archivo `client/index.html`, sin depender de componentes React para renderizar la portada.
 
 ## Dirección de diseño
 
-- **Movimiento:** editorial rural contemporáneo, inspirado en revistas de arquitectura y hospitalidad sobria.
-- **Principios:** claridad, calma, confianza y precisión.
-- **Filosofía de color:** verde bosque para transmitir estabilidad y cuidado; arena y papel para calidez; blanco roto para legibilidad y sensación de calidad.
-- **Paradigma de layout:** composición asimétrica con bloques editoriales amplios, divisores finos y una narrativa vertical que alterna información institucional, servicio, proceso y contacto.
-- **Elementos distintivos:** marca circular con hoja, numeración editorial de secciones y tratamiento de cursivas en palabras clave.
-- **Interacción:** enlaces discretos con subrayados, flechas y desplazamiento suave; el contacto principal siempre lleva a WhatsApp.
-- **Animación:** microinteracciones de desplazamiento y elevación en botones y filas; sin efectos llamativos ni movimiento decorativo excesivo.
-- **Tipografía:** Playfair Display para titulares expresivos y DM Sans para navegación, textos y llamadas a la acción.
-- **Esencia de marca:** mantenimiento confiable para propietarios que quieren encontrar su quinta cuidada y lista para disfrutar. Personal, responsable, prolija.
-- **Voz:** formal, directa y cercana, sin exageraciones. Ejemplos: “Su quinta, siempre en buenas manos.” / “Confianza construida con trabajo bien hecho.”
-- **Marca:** logotipo tipográfico “Mantenimiento de quintas” acompañado por un círculo con hoja lineal.
-- **Color de marca:** verde bosque profundo `#244B40`.
+La identidad utiliza una estética editorial rural contemporánea: verde bosque para transmitir estabilidad y cuidado, arena para aportar calidez y blanco roto para mantener la legibilidad. La composición es sobria, asimétrica y con mucho espacio visual. Los titulares usan una serif clásica y el contenido utiliza una sans-serif del sistema para mantener la autonomía del archivo.
 
-## Estructura del proyecto
+## Contenido
 
-- `client/src/pages/Home.tsx`: portada institucional y contenido de la página.
-- `client/src/index.css`: sistema visual, responsive y componentes de la página.
-- `client/index.html`: idioma, metadata SEO y preview social.
-- `client/public/manus-routes.json`: manifiesto de rutas públicas.
-- `client/public/brand-mark.svg`: marca auxiliar para metadata de proyecto.
+La portada presenta quiénes son, qué tipo de mantenimiento ofrecen, cómo trabajan, los valores de confianza y un contacto directo por WhatsApp al número `5493425274087`. No presenta las quintas como propiedades en venta o alquiler y no incorpora Instagram porque el usuario indicó que no existe.
 
-## Decisiones técnicas
+## Archivo principal
 
-- Aplicación React/Vite del starter `web-db-user`, servida como sitio estático sin servidor ni base de datos.
-- Contacto directo por WhatsApp al número proporcionado: `5493425274087`.
-- No se incorpora Instagram porque el usuario indicó que no existe.
-- La imagen hero se genera como recurso original y se referencia desde Manus Storage.
-- No se define canonical absoluto mientras no exista un dominio público confirmado.
+- `client/index.html`: documento autónomo con HTML semántico, metadata SEO, Open Graph, contenido completo, CSS responsive integrado y script mínimo para actualizar el año del pie de página.
+- `client/public/manus-routes.json`: manifiesto de la ruta pública `/`.
+- `app.config.ts`: logo del proyecto.
+
+## Verificación
+
+La versión autónoma fue compilada con `pnpm build:static`, revisada en escritorio y comprobada contra el servidor local. El enlace principal de WhatsApp utiliza `https://wa.me/5493425274087`.
